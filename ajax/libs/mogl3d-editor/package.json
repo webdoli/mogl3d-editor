@@ -1,0 +1,27 @@
+{
+    "name": "mogl3d-editor",
+    "version": "1.0.0",
+    "description": "web 3d text editor libarary",
+    "homepage": "https://github.com/webdoli/mogl3d-editor",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/webdoli/mogl3d-editor.git"
+    },
+    "author": "mogl3d.com",
+    "license": "MIT",
+    "keywords": [
+        "text editor",
+        "web3d",
+        "three.js"
+    ],
+    "filename": "mogl3d-editor.min.js",
+    "npmName": "mogl3d",
+    "npmFileMap": [
+        {
+            "basePath": "/dist",
+            "files": [
+                "*.min.js"
+            ]
+        }
+    ]
+}
