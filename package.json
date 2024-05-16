@@ -2,7 +2,15 @@
   "name": "mogl3d-editor",
   "version": "1.0.0",
   "description": "3d text editor",
-  "main": "index.html",
+  "main": "lib/mogl3d-editor.js",
+  "files": [
+    "lib/**/*",
+    "css/**/*",
+    "plugin/**/*",
+    "index.html",
+    "package.json",
+    "README.md"
+  ],
   "directories": {
     "lib": "lib"
   },
@@ -18,7 +26,7 @@
     "editor"
   ],
   "author": "mogl3d",
-  "license": "ISC",
+  "license": "ISC ⓒCGHUB",
   "bugs": {
     "url": "https://github.com/webdoli/mogl3d-editor/issues"
   },
