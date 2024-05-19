@@ -1,6 +1,6 @@
 {
   "name": "mogl3d-editor",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "3d text editor",
   "main": "lib/mogl3d-editor.js",
   "files": [
