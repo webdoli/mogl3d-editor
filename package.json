@@ -1,6 +1,6 @@
 {
   "name": "mogl3d-editor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "3d text editor",
   "main": "lib/mogl3d-editor.js",
   "files": [
@@ -26,7 +26,7 @@
     "editor"
   ],
   "author": "mogl3d",
-  "license": "ISC ⓒCGHUB",
+  "license": "ISC ⓒCGHUB, By LeeJuHeon",
   "bugs": {
     "url": "https://github.com/webdoli/mogl3d-editor/issues"
   },
