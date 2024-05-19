@@ -191,7 +191,8 @@ export class ThreeModules {
 		// Resize
 		window.addEventListener('resize', function() {
 
-			const content_node = this.editor.querySelector('.mogl3d-content');
+			let content_node = document.querySelector('.mogl3d-content');
+			// const content_node = this.editor.querySelector('.mogl3d-content');
 			const content_rect = content_node.getBoundingClientRect();
 
         	let width = content_rect.width * .78;
