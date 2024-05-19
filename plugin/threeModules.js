@@ -85,6 +85,7 @@ export class ThreeModules {
 
 		const content_node = this.editor.querySelector('.mogl3d-content');
         const content_rect = content_node.getBoundingClientRect();
+		const aspectRatio = 16 / 9;
 
         let width = content_rect.width * .78;
         let height = width / aspectRatio;
