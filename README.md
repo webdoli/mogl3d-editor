@@ -155,6 +155,10 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 <div align="center">
     <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/1b8a8672-7571-4556-a326-e7c6616f5dbe" width="70%;" />
 </div>
+<div align="center">
+    <span>「basic output」</span>
+</div>
+
 
 
 <br>
@@ -163,7 +167,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
 
 ## 📖 Options
-### | Actions
+### | actions
 <p>
     Specific features can be included in the text editor through the actions object, which is the second parameter of the new MOGL3D() instance.
 </p>
@@ -180,5 +184,49 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
     </script>
 ```
 
+<br>
 
+
+<div align="center">
+    <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/face781b-e5d4-4d7d-a75f-31de7789b9b0" width="40%;"/>
+</div>
+<br>
+<p>
+    Items specified with the actions list values are as follows:
+</p>
+
+- 「 italic 」👉  Make text Italicize
+- 「 bold 」👉 Make text Bold
+- 「 underline 」👉 Make text underline
+- 「 strikethrough 」👉 Strikethrough text
+- 「 fontMenu 」👉 Change font size and styles
+- 「 textColorMenu 」👉 Change font color and background color 
+- 「 alignMenu 」👉 Change font alignment
+- 「 line 」👉 Make Horizontal line
+- 「 olist 」👉 Create table of contents
+- 「 quote 」👉 Make blockquote in sentences
+- 「 ulist 」👉 Create numbered lists
+- 「 filesMenu 」👉 Make file upload menus
+
+
+<br>
+
+### | onChange
+
+
+<br>
+
+### | plugins
+
+<br>
+
+### | on3DLoad
+
+
+<br>
+<br>
+<br>
+
+## 💡 Dev
+### with Server
 
