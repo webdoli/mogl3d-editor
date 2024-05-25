@@ -27,24 +27,7 @@ In version 1.xx, only the 3D file upload feature is provided, and the supported 
 ## ⚙️ Install
 ### CDN
 
-#### 1️⃣ mogl3d editor
-
-
-  ```html
-    <script src="https://unpkg.com/mogl3d-editor@1.1.1/lib/mogl3d-editor.js"></script>
-    <script src="https://unpkg.com/mogl3d-editor@1.1.1/lib/mogl3d-editor.min.js"></script>
-  ```
-
-<p>
- To use the 3D file upload feature, the main library must be installed. Insert the JavaScript script tag between the <head> tags in the HTML. 
-If there is no need to upload 3D files, the 3D module does not need to be installed. However, if 3D functionality is required, please follow step 2 below to install the 3D module.
- </p>
-
-<br>
-<br>
-
- 
- #### 2️⃣ plugin: three.js | mogl3d module
+#### 1️⃣ three.js module 
 
 <p>To use 3D functionality in the MOGL3D Editor, the three.js module must first be installed, followed by the installation of the threeModule.js from MOGL3D.</p>
 
@@ -63,17 +46,56 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 <br>
 <br>
 
+ 
+
+#### 2️⃣ mogl3d editor
+
+
+  ```html
+    <script src="https://unpkg.com/mogl3d-editor@1.1.1/lib/mogl3d-editor.js"></script>
+    <script src="https://unpkg.com/mogl3d-editor@1.1.1/lib/mogl3d-editor.min.js"></script>
+  ```
+
 <p>
- After installing the three.js module library, the three object must be imported using the importMap method.
+ To use the 3D file upload feature, the main library must be installed. Insert the JavaScript script tag between the <head> tags in the HTML. 
+If there is no need to upload 3D files, the 3D module does not need to be installed. However, if 3D functionality is required, please follow step below to install the 'threeModules.js'.
+</p>
+
+
+* #### threeModule.js
+
+```html
+    <script type="module">
+        import { ThreeModules } from 'https://unpkg.com/mogl3d-editor@1.1.1/plugin/threeModules.min.js';
+    </script>
+```
+<p>
+❗Note: The three.module.js module must be included at the top. After installing the three.js module library, the three object must be imported using the importMap method.
  threeModules.js depends on the three.js module.
 </p>
 
-* #### threeModule.js module
+<br>
+<br>
 
+#### 3️⃣ CSS link
+<p>
+    The icons in MOGL3D Editor use the Font Awesome library. Therefore, please install the Font Awesome CSS library via CDN before installing the MOGL3D Editor CSS library.
+</p>
+
+* #### install font-awesome.css
 ```html
- <script src="https://unpkg.com/mogl3d-editor@1.1.1/plugin/threeModules.js"></script>
- <script src="https://unpkg.com/mogl3d-editor@1.1.1/plugin/threeModules.min.js"></script>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://unpkg.com/mogl3d-editor@1.1.1/css/mogl3d_styles.css">
+    </head>
 ```
 <p>
- 
+    ❗Note: install the 'mogl3d-style.css' library below the 'font-awesome.css' library.
 </p>
+
+<br>
+<br>
+<br>
+
+## 🖥️ Usage
+
