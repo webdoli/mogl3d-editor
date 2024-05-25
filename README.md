@@ -15,11 +15,12 @@ In version 1.xx, only the 3D file upload feature is provided, and the supported 
 * gltf
 * obj
 
-
+<br>
 <div align="center">
-  <video src="https://private-user-images.githubusercontent.com/55019191/333774745-d9025cb8-faee-4c32-b5c3-e5f835bff173.webm?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTY2MTU1NTcsIm5iZiI6MTcxNjYxNTI1NywicGF0aCI6Ii81NTAxOTE5MS8zMzM3NzQ3NDUtZDkwMjVjYjgtZmFlZS00YzMyLWI1YzMtZTVmODM1YmZmMTczLndlYm0_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjQwNTI1JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI0MDUyNVQwNTM0MTdaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1mODUwMmM5ZGY5YzdiMjc4MGNhMDI4NWQ1MDI3ZTIyZDY3ZmZiNzM3NTdjOWUyMmQwZDUzODZiN2Y0OWY4OTkwJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZhY3Rvcl9pZD0wJmtleV9pZD0wJnJlcG9faWQ9MCJ9.d7CoiWILHxJYYc1E-lQGSlI-ra4WHbUu1CkkdE0b1cU" style="max-width: 100%; height: auto;" controls autoplay muted></video>
+    <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/cd8a6627-e82a-4903-9ad9-daabb3ce3823" width="86%" />
 </div>
 
+<br>
 <br>
 
 
