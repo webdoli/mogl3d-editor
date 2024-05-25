@@ -144,16 +144,41 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
 
 <br>
+<br>
 
 
-### | Result
+### | Execute
 <p>
     If no options are configured, all features will be enabled by default. To use specific features only, options must be set accordingly (further explanation continues below).
 </p>
+<br>
 <div align="center">
     <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/1b8a8672-7571-4556-a326-e7c6616f5dbe" width="70%;" />
 </div>
 
+
+<br>
+<br>
+<br>
+
+
+## 📖 Options
+### | Actions
+<p>
+    Specific features can be included in the text editor through the actions object, which is the second parameter of the new MOGL3D() instance.
+</p>
+
+```html
+    <script>
+    const myEditor = new MOGL3D( editor, {
+            actions:[
+                 'italic',
+                 'bold',
+                 'fontMenu',
+            ]
+    });
+    </script>
+```
 
 
 
