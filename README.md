@@ -7,7 +7,7 @@ In version 1.xx, only the 3D file upload feature is provided, and the supported 
 * gltf
 * obj
 <video width="1080">
-  <source src="" type="video/webm">
+  <source src="https://github.com/webdoli/mogl3d-editor/src/moglEditor_Commercial.webm" type="video/webm">
 </video>
 
 ## 🚩Usage
