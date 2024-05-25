@@ -1,2 +1,3 @@
-# mogl3d-editor
-3d text web editor
+# **mogl3d-editor**
+
+MOGL3D Editor is a WYSIWYG editor that allows 3D files to be uploaded on the web.
