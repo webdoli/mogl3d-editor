@@ -98,4 +98,56 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 <br>
 
 ## 🖥️ Usage
+### | Example
+<p>
+    The basic usage is as follows:
+</p>
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/mogl3d-editor@1.1.1/css/mogl3d_styles.css">
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.159.0/build/three.module.min.js"
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/mogl3d-editor@1.1.1/lib/mogl3d-editor.js"></script>
+
+</head>
+<body>
+
+    <h1> MOGL3D Editor </h1>
+    <div id="editor"></div>
+
+    <script type="module">
+        
+        import { ThreeModules } from 'https://unpkg.com/mogl3d-editor@1.1.1/plugin/threeModules.min.js';
+        
+        const editor = document.getElementById('editor');
+        const myEditor = new MOGL3D( editor, {} ); 
+
+    </script>
+
+</body>
+</html>
+```
+
+
+<br>
+### | Result
+<p>
+    
+</p>
+
+
 
