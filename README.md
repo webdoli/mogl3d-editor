@@ -25,7 +25,7 @@ In version 1.xx, only the 3D file upload feature is provided, and the supported 
 
 
 ## ⚙️ Install
-### CDN
+### | CDN
 
 #### 1️⃣ three.js module 
 
@@ -144,10 +144,14 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
 
 <br>
+
+
 ### | Result
-<p>
-    
-</p>
+
+<div align="center">
+    <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/1b8a8672-7571-4556-a326-e7c6616f5dbe" width="70%;" />
+</div>
+
 
 
 
