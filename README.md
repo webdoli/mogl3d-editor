@@ -243,15 +243,37 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 ```
 <br>
 
-#### output
+* `output`
+<div align="center">
+    <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/6cef9452-93e4-4d0e-9966-0107b52c6325" />
+</div>
 
-
+<br>
+<br>
 
 ### | plugins
+<p>
+    As of version 1.1.2, the only available plugin is threeModules. To use the 3D source upload feature, you need to include this plugin as shown below.
+</p>
+<br>
+
+```html
+    <script>
+        import { ThreeModules } from './plugin/threeModules.js';
+        const myEditor = new MOGL3D({
+            // etc..
+            plugins: [{
+                'threeModules': ThreeModules,
+            }],
+        });
+    </script>    
+```
+<p>
+    ❗Note: As of version 1.1.2, 「threeModules」 need to import "ThreeModules" from './plugin/threeModules.js'
+</p>
 
 <br>
 
-### | on3DLoad
 
 
 <br>
