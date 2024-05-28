@@ -1,6 +1,7 @@
 
 # <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/77be0170-8c6a-4660-b73a-1e25d6c55b8e" alt="Logo" width="48" height="48" /> **MOGL3D-Editor Ver 1.1.2**
 
+* `Demo:`  [MOGL3D.com](https://www.mogl3d.com)
 
 <div>MOGL3D Editor is a WYSIWYG editor that allows 3D files to be uploaded on the web. </div>
 
@@ -281,5 +282,139 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 <br>
 
 ## 💡 Dev
-### with Server
+### | Output
 
+<p>
+    An example for saving data from a text editor to a server is as follows.
+</p>
+
+* `.getOutputData( ⓐ )`
+<p>
+❗Note: ⓐ is an instance of MOGL3D. Since we declared new MOGL3D() to the myEditor variable above, you should assign the myEditor variable as the value for ⓐ.
+</p>
+<p>
+❗Note: The use of either 「async-await」 or 「promise」 syntax is mandatory
+</p>
+<br>
+
+```html
+    <script>
+        document.getElementById('data-button').addEventListener('click', async (e) => {
+
+            const outputDatas = await myEditor.getOutputData( myEditor );
+            console.log('Output: ', outputDatas );
+
+        });
+    </script>
+```
+
+<p>
+    <div align="center">
+        <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/e7f1233a-6eb5-40ae-af31-6e546861b5fb" />
+    </div>
+</p>
+
+<br>
+<br>
+
+### | Example
+<p>
+    The following complete code is an example related to receiving content from an editor and transmitting it to a server, or implementing content received from a server into the editor.
+</p>
+<br>
+
+```html
+    <html>
+        <head>
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+            <link rel="stylesheet" href="https://unpkg.com/mogl3d-editor@1.1.2/css/mogl3d_styles.css">
+            <script type="importmap">
+                {
+                    "imports": {
+                        "three": "https://unpkg.com/three@0.159.0/build/three.module.min.js"
+                    }
+                }
+            </script>
+            <script src="https://unpkg.com/mogl3d-editor@1.1.2/lib/mogl3d-editor.js"></script>
+        </head>
+        <body>
+
+            <div id="editor" class="mogl3d"></div>
+
+            <div>
+                <h3>Text output: <button id='publish-button'>Publish</button></h3>
+                <div id="text-output"></div>
+            </div>
+    
+            <div>
+                <h3>HTML output: <button id='data-button'>Data</button></h3>
+                <pre id="html-output" class="html-output"></pre>
+            </div>
+
+            <script type="module">
+                import { ThreeModules } from 'https://unpkg.com/mogl3d-editor@1.1.2/plugin/threeModules.js';
+                import { OrbitControls } from 'https://unpkg.com/three@0.159.0/examples/jsm/controls/OrbitControls.js';
+                import * as THREE from 'three';
+
+                const editorElement = document.getElementById('editor');
+                const myEditor = new MOGL3D({
+                    // actions:[
+                    //     'italic',
+                    //     'bold',
+                    //     'fontMenu',
+                    // ],
+                    element: editorElement,
+                    editorName: 'mogl3d-content',
+                    onChange: function ( html, models ) {
+                        console.log(`datas: ${html}, models: ${models}`)
+                        // document.getElementById('html-output').textContent = html;
+                    },
+                    plugins: [{
+                        'threeModules': ThreeModules,
+                    }]
+                });
+
+
+                // When transfer code datas and models(3d)..
+                document.getElementById('data-button').addEventListener('click', async (e) => {
+                    const outputDatas = await myEditor.getOutputData( myEditor );
+                    console.log('Output: ', outputDatas );
+                });
+
+
+                // When receive code datas and 3d models..
+                document.getElementById('publish-button').addEventListener('click', e => {
+
+                    const textOutputArea = document.querySelector('#text-output');
+                    const contentNode = document.querySelector(`.${myEditor.editorName}`);
+                    let models = myEditor.getModels();
+
+                        textOutputArea.innerHTML = contentNode.innerHTML;
+
+                        if( models ) {
+                
+                            models.map( model => {
+                    
+                                for( let item in model ) {
+                        
+                                    let node = textOutputArea.querySelector(`[title="${item}"]`);
+                                    if( node.firstChild ) node.removeChild( node.firstChild );
+                        
+                                    let obj = model[item].clone();
+                                    let threeModules = new ThreeModules({
+                                        editor: document.querySelector('#editor')
+                                    });
+                            
+                                    threeModules.init( node, obj );
+                                }
+                            }) // .map() End
+                
+                        } // if End
+
+                }) // publis-button Evt End
+
+        </script>
+
+        </body>    
+    </html>
+```
