@@ -1,5 +1,5 @@
 
-# <img src="https://github.com/webdoli/mogl3d-editor/blob/main/src/12_logo.png?raw=true" alt="Logo" width="42" height="42" /> **MOGL3D-Editor**
+# <img src="https://github.com/webdoli/mogl3d-editor/blob/main/src/12_logo.png?raw=true" alt="Logo" width="42" height="42" /> **MOGL3D-Editor Ver 1.1.2**
 
 
 <div>MOGL3D Editor is a WYSIWYG editor that allows 3D files to be uploaded on the web. </div>
@@ -134,7 +134,10 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
         import { ThreeModules } from 'https://unpkg.com/mogl3d-editor@1.1.1/plugin/threeModules.min.js';
         
         const editor = document.getElementById('editor');
-        const myEditor = new MOGL3D( editor, {} ); 
+        const myEditor = new MOGL3D({
+            element: editor,
+            editorName: 'mogl3d-content'  // User customization allowed 
+        }); 
 
     </script>
 
@@ -142,6 +145,10 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 </html>
 ```
 
+
+<p> 
+    ❗Note: 「element」 and 「editorName」 keys within the object are essential required. 
+</p>
 
 <br>
 <br>
@@ -210,11 +217,35 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
 
 <br>
+<br>
 
 ### | onChange
-
-
+<p>
+    The onChange function is responsible for retrieving the values recorded in the text editor in real time.
+</p>
 <br>
+
+```html
+    <script>
+        const myEditor = new MOGL3D({
+            
+            element: editorElement,
+            editorName: 'mogl3d-content',
+            onChange: function ( html, models ) {
+                console.log(`datas: ${html}, models: ${models}`)
+            },
+            plugins: [{
+                'threeModules': ThreeModules,
+            }],
+
+        });
+    </script>
+```
+<br>
+
+#### output
+
+
 
 ### | plugins
 
