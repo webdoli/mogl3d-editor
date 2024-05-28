@@ -327,6 +327,7 @@ export class ThreeModules {
 
 					const loader = new FBXLoader( manager );
 					const object = loader.parse( contents );
+					object.name = filename;
                     cb( object );
 
 				}, false );

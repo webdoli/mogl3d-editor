@@ -4,8 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoGL3D Web Editor</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="./css/mogl3d_styles.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.159.0/build/three.module.min.js"
+            }
+        }
+    </script>
+    <script src="./lib/mogl3d-editor.js"></script>
 </head>
 <body>
+
+    <h1>Mogl3D Editor</h1>
+    <div id="editor" class="mogl3d"></div>
+    <div>
+        <h3>Text output: <button id='publish-button'>Publish</button></h3>
+        <div id="text-output"></div>
+    </div>
     
+    <div>
+        <h3>HTML output: <button id='data-button'>Data</button></h3>
+        <pre id="html-output" class="html-output"></pre>
+    </div>
+
+    <script type="module">
+        import { ThreeModules } from './plugin/threeModules.js';
+        import { OrbitControls } from 'https://unpkg.com/three@0.159.0/examples/jsm/controls/OrbitControls.js';
+        import * as THREE from 'three';
+
+        const editorElement = document.getElementById('editor');
+        const myEditor = new MOGL3D({
+            // actions:[
+            //     'italic',
+            //     'bold',
+            //     'fontMenu',
+            // ],
+            element: editorElement,
+            editorName: 'mogl3d-content',
+            onChange: function ( html, models ) {
+                
+                console.log(`datas: ${html}, models: ${models}`)
+                // document.getElementById('html-output').textContent = html;
+            },
+            plugins: [{
+                'threeModules': ThreeModules,
+            }],
+            on3DLoad: function( obj, num ) {
+                    // console.log('obj: ', obj);
+                }
+        });
+
+
+        // When receive code datas and 3d models..
+        document.getElementById('publish-button').addEventListener('click', e => {
+
+            const textOutputArea = document.querySelector('#text-output');
+            const contentNode = document.querySelector(`.${myEditor.editorName}`);
+            let models = myEditor.getModels();
+
+                textOutputArea.innerHTML = contentNode.innerHTML;
+
+                if( models ) {
+                
+                    models.map( model => {
+                    
+                        for( let item in model ) {
+                        
+                            let node = textOutputArea.querySelector(`[title="${item}"]`);
+                            if( node.firstChild ) node.removeChild( node.firstChild );
+                        
+                            let obj = model[item].clone();
+                            let threeModules = new ThreeModules({
+                                    editor: document.querySelector('#editor')
+                                });
+                            
+                            threeModules.init( node, obj );
+                        }
+                    })
+                
+                }
+
+        })
+
+        // When transfer code datas and models(3d)..
+        document.getElementById('data-button').addEventListener('click', async (e) => {
+
+            const outputDatas = await myEditor.getOutputData( myEditor );
+            console.log('Output: ', outputDatas );
+
+        });
+
+    </script>
 </body>
 </html>
