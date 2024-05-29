@@ -317,7 +317,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 <br>
 <br>
 
-### | Example 「Data to Server & Server to HTML」
+### | Example 「Data(htlm, files) to Server & Server to HTML」
 <p>
     The following complete code is an example related to receiving content from an editor and transmitting it to a server, or implementing content received from a server into the editor.
 </p>
@@ -375,14 +375,14 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
                 });
 
 
-                // When transfer code datas and models(3d)..
+                // When transfer datas(html and files) to server..
                 document.getElementById('data-button').addEventListener('click', async (e) => {
                     const outputDatas = await myEditor.getOutputData( myEditor );
                     console.log('Output: ', outputDatas );
                 });
 
 
-                // When receive code datas and 3d models..
+                // When receive datas(html & files) from server..
                 document.getElementById('publish-button').addEventListener('click', e => {
 
                     const textOutputArea = document.querySelector('#text-output');
@@ -418,3 +418,27 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
         </body>    
     </html>
 ```
+
+
+<br>
+<br>
+<br>
+
+## 💬 Dependency
+* [FONT AWESOME](https://docs.fontawesome.com/web/style/basics/)
+* [THREE.JS](https://github.com/mrdoob/three.js/)
+
+<br>
+<br>
+
+
+## 🚀 Used by
+* [MOGL3D](mogl3d.tistory.com)
+* [MOGL3D Blog](mogl3d.tistory.com)
+
+<br>
+<br>
+
+
+## 📜 License
+This software is licensed under the MIT, ©CGHUB
