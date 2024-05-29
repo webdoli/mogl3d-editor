@@ -1,7 +1,7 @@
 
 # <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/77be0170-8c6a-4660-b73a-1e25d6c55b8e" alt="Logo" width="48" height="48" /> **MOGL3D-Editor Ver 1.1.2**
 
-* `Demo:`  [MOGL3D.com](https://www.mogl3d.com)
+* `Demo Link` : <a href="https://www.mogl3d.com" target="_blank">MOGL3D.com</a>
 
 <div>MOGL3D Editor is a WYSIWYG editor that allows 3D files to be uploaded on the web. </div>
 
