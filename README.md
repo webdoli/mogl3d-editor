@@ -317,7 +317,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 <br>
 <br>
 
-### | Example
+### | Example 「Data to Server & Server to HTML」
 <p>
     The following complete code is an example related to receiving content from an editor and transmitting it to a server, or implementing content received from a server into the editor.
 </p>
