@@ -37,7 +37,6 @@ div {
 #editor {
     display: flex;
     max-width: 1080px;
-    margin: 20px auto;
     border: 1px solid #dadde6;
     border-radius: 4px;
     background-color: #fff;
