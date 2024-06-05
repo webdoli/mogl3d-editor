@@ -1,5 +1,5 @@
 
-# <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/77be0170-8c6a-4660-b73a-1e25d6c55b8e" alt="Logo" width="48" height="48" /> **MOGL3D-Editor Ver 1.1.2**
+# <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/77be0170-8c6a-4660-b73a-1e25d6c55b8e" alt="Logo" width="48" height="48" /> **MOGL3D-Editor Ver 1.2.0**
 
 * `Demo Link`: [MOGL3D.com](https://www.mogl3d.com) ( Ctrl+click: Open link in a new window )
 
@@ -53,8 +53,8 @@ In version 1.xx, only the 3D file upload feature is provided, and the supported 
 
 
   ```html
-    <script src="https://unpkg.com/mogl3d-editor@1.1.1/lib/mogl3d-editor.js"></script>
-    <script src="https://unpkg.com/mogl3d-editor@1.1.1/lib/mogl3d-editor.min.js"></script>
+    <script src="https://unpkg.com/mogl3d-editor@1.2.0/lib/mogl3d-editor.js"></script>
+    <script src="https://unpkg.com/mogl3d-editor@1.2.0/lib/mogl3d-editor.min.js"></script>
   ```
 
 <p>
@@ -67,7 +67,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
 ```html
     <script type="module">
-        import { ThreeModules } from 'https://unpkg.com/mogl3d-editor@1.1.1/plugin/threeModules.min.js';
+        import { ThreeModules } from 'https://unpkg.com/mogl3d-editor@1.2.0/plugin/threeModules.min.js';
     </script>
 ```
 <p>
@@ -87,7 +87,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 ```html
     <head>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link rel="stylesheet" href="https://unpkg.com/mogl3d-editor@1.1.1/css/mogl3d_styles.css">
+        <link rel="stylesheet" href="https://unpkg.com/mogl3d-editor@1.2.0/css/mogl3d_styles.css">
     </head>
 ```
 <p>
@@ -113,7 +113,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/mogl3d-editor@1.1.1/css/mogl3d_styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/mogl3d-editor@1.2.0/css/mogl3d_styles.css">
 
     <script type="importmap">
         {
@@ -122,7 +122,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
             }
         }
     </script>
-    <script src="https://unpkg.com/mogl3d-editor@1.1.1/lib/mogl3d-editor.js"></script>
+    <script src="https://unpkg.com/mogl3d-editor@1.2.0/lib/mogl3d-editor.js"></script>
 
 </head>
 <body>
@@ -132,7 +132,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 
     <script type="module">
         
-        import { ThreeModules } from 'https://unpkg.com/mogl3d-editor@1.1.1/plugin/threeModules.min.js';
+        import { ThreeModules } from 'https://unpkg.com/mogl3d-editor@1.2.0/plugin/threeModules.min.js';
         
         const editor = document.getElementById('editor');
         const myEditor = new MOGL3D({
@@ -289,6 +289,14 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 </p>
 
 * `.getOutputData( ⓐ )`
+
+<p>
+    the result of `[ your editor (id:editor)node ].getOutputData( [your editor (id:editor)node] )` returns "code" & "files" values. 
+    to transfer server these datas, 
+        ① converting code to string
+        ② files to blob 
+</p>
+
 <p>
 ❗Note: ⓐ is an instance of MOGL3D. Since we declared new MOGL3D() to the myEditor variable above, you should assign the myEditor variable as the value for ⓐ.
 </p>
@@ -327,7 +335,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
     <html>
         <head>
             <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
-            <link rel="stylesheet" href="https://unpkg.com/mogl3d-editor@1.1.2/css/mogl3d_styles.css">
+            <link rel="stylesheet" href="https://unpkg.com/mogl3d-editor@1.2.0/css/mogl3d_styles.css">
             <script type="importmap">
                 {
                     "imports": {
@@ -335,7 +343,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
                     }
                 }
             </script>
-            <script src="https://unpkg.com/mogl3d-editor@1.1.2/lib/mogl3d-editor.js"></script>
+            <script src="https://unpkg.com/mogl3d-editor@1.2.0/lib/mogl3d-editor.js"></script>
         </head>
         <body>
 
@@ -352,7 +360,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
             </div>
 
             <script type="module">
-                import { ThreeModules } from 'https://unpkg.com/mogl3d-editor@1.1.2/plugin/threeModules.js';
+                import { ThreeModules } from 'https://unpkg.com/mogl3d-editor@1.2.0/plugin/threeModules.js';
                 import { OrbitControls } from 'https://unpkg.com/three@0.159.0/examples/jsm/controls/OrbitControls.js';
                 import * as THREE from 'three';
 
