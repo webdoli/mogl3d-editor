@@ -62,10 +62,11 @@ div {
 }
 
 .mogl3d-button {
+    
     font-size: 1.1em;
     background-color: #474747; /* Button background color */
     color: #c7c7c7;
-    padding: 8px 12px;
+    padding: 10px 12px;
     border: none; 
     cursor: pointer; 
     text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);

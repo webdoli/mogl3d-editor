@@ -1,7 +1,7 @@
 {
   "name": "mogl3d-editor",
-  "version": "1.1.9",
-  "description": "Ver 1.1.9: editor margin removed update ",
+  "version": "1.2.0",
+  "description": "Ver 1.2.0: editor margin removed update ",
   "main": "dist/mogl3d-editor.js",
   "module": "dist/mogl3d-editor.module.js",
   "exports": {
