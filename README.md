@@ -1,5 +1,5 @@
 
-# <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/77be0170-8c6a-4660-b73a-1e25d6c55b8e" alt="Logo" width="48" height="48" /> **MOGL3D-Editor Ver 1.2.0**
+# <img src="https://github.com/webdoli/mogl3d-editor/assets/55019191/77be0170-8c6a-4660-b73a-1e25d6c55b8e" alt="Logo" width="48" height="48" /> **MOGL3D-Editor Ver 1.2.1**
 
 * `Demo Link`: [MOGL3D.com](https://www.mogl3d.com) ( Ctrl+click: Open link in a new window )
 
@@ -281,7 +281,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
 <br>
 <br>
 
-## 💡 Dev
+## 💡 Dev(API)
 ### | Output
 
 <p>
@@ -426,9 +426,14 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
         </body>    
     </html>
 ```
-
-
 <br>
+
+<p>
+    The getOutputData() method returns the following three outcomes.
+     - 'code' : 「String」 HTML code within the text editor
+     - 'files': 「Object」 3D files
+     - 'threeSceneClasses': 「Array」 Array of classes where the 3D file is embedded
+</p>
 <br>
 <br>
 
