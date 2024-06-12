@@ -432,7 +432,7 @@ If there is no need to upload 3D files, the 3D module does not need to be instal
     The getOutputData() method returns the following three outcomes.
      - 'code' : 「String」 HTML code within the text editor
      - 'files': 「Object」 3D files
-     - 'threeSceneClasses': 「Array」 Array of classes where the 3D file is embedded
+     - 'scenes': 「Array」 Array of classes where the 3D file is embedded
 </p>
 <br>
 <br>
