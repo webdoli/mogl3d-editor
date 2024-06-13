@@ -69,6 +69,8 @@ export class ThreeModules {
     constructor( opt ) {
         
         this.editor = opt.editor;
+		this.scene = null;
+		this.renderer = null;
         // this.obj = opt.obj;
         // this.loader = null;
 
@@ -82,6 +84,7 @@ export class ThreeModules {
 		if( scnContainer.firstChild ) scnContainer.removeChild( scnContainer.firstChild );
 		
 		const scene = new THREE.Scene();
+		this.scene = scene;
 		const aspectRatio = 16 / 9;
 
 		const content_node = this.editor.querySelector('.mogl3d-content');
@@ -249,6 +252,14 @@ export class ThreeModules {
         animate();
         return scnContainer;
     }
+
+	getScene() {
+		if( this.scene ) return this.scene;
+	}
+
+	addObject( obj ) {
+		if( this.scene ) this.scene.add( obj );
+	}
 
 	updateSize(renderer, camera, width, height ) {
 		
