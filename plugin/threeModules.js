@@ -67,19 +67,29 @@ const LoaderUtils = {
 export class ThreeModules {
 
     constructor( opt ) {
+
+		if( opt ) {
+			this.editor = ( opt.editor ) ? opt.editor : null;
+			this.sceneWrapper = ( opt.sceneWrapper ) ? opt.sceneWrapper : null;
+		}
         
-        this.editor = opt.editor;
 		this.scene = null;
 		this.renderer = null;
-        // this.obj = opt.obj;
-        // this.loader = null;
+		this.cls = null;
+		this.postScenes = [];
+		this.threeScenes = {};
 
     }
 
     init( scn, obj ) {
-		// console.log(`scn: ${scn}, obj: ${obj}`);
+		
+		if( !this.editor && !this.sceneWrapper ) { 
+			console.log('Error: insert option, editor or sceneWrapper!');
+			return;
+		}
 
         let scnContainer = scn;
+		let className = scn.className;
 		const cls = this;
 		if( scnContainer.firstChild ) scnContainer.removeChild( scnContainer.firstChild );
 		
@@ -87,10 +97,10 @@ export class ThreeModules {
 		this.scene = scene;
 		const aspectRatio = 16 / 9;
 
-		const content_node = this.editor.querySelector('.mogl3d-content');
-        const content_rect = content_node.getBoundingClientRect();
+		const content_node = ( this.editor ) ? this.editor.querySelector('.mogl3d-content') : null;
+        const content_rect = ( content_node ) ? content_node.getBoundingClientRect() : null;
 
-        let width = content_rect.width * .78;
+        let width = ( content_rect ) ? content_rect.width * .78 : 640 ;
         let height = width / aspectRatio;
 
 		scnContainer.style.width = `${width}px`;
@@ -111,6 +121,7 @@ export class ThreeModules {
         scene.add(ambientLight)
 
         const renderer = new THREE.WebGLRenderer();
+		this.renderer = renderer;
         renderer.setSize( width, height );
         scnContainer.appendChild( renderer.domElement );
 
@@ -157,7 +168,7 @@ export class ThreeModules {
 		backgroundBtn.style.position = 'absolute';
 		backgroundBtn.style.zIndex = '-1';
 
-		// 그Create Grid toggle button
+		// Create Grid toggle button
 		let gridToggleBtn = document.createElement('button');
 		gridToggleBtn.textContent = 'Grid';
 		gridToggleBtn.className = 'three-scene-btn';
@@ -203,7 +214,7 @@ export class ThreeModules {
 		window.addEventListener('resize', function(e) {
 			
 			if( !document.fullscreenElement ) {
-
+				if( !content_node ) return
 				const content_rect = content_node.getBoundingClientRect();
 				let width = content_rect.width * .78;
 				let height = width / aspectRatio;
@@ -248,17 +259,51 @@ export class ThreeModules {
             renderer.render(scene, camera);
     
         }
+
+		this.threeScenes[ className ] = scene;
     
         animate();
         return scnContainer;
     }
+
+	initPost( files, cls ) {
+
+		// console.log('initPost: ', files );
+		let threeScenes_keys = Object.keys( this.threeScenes );
+		let element = document.querySelector(`.${cls}`);
+
+		this.loadFiles( files, null, res => {
+			
+			let threeSceneLen = threeScenes_keys.length;
+			if(  threeSceneLen > 0 ) {
+				
+				let threeSceneSet = new Set( threeScenes_keys );
+				
+				if( threeSceneSet.has( cls ) ) {
+					this.addObject( res, this.threeScenes[ cls ] );
+				} else {
+					this.init( element, res );
+				}
+			
+			} else if( threeSceneLen === 0 ) {
+				// console.log('no scenes, creating new scene');
+				this.init( element, res );
+			
+			}
+		})
+
+	}
 
 	getScene() {
 		if( this.scene ) return this.scene;
 	}
 
 	addObject( obj ) {
-		if( this.scene ) this.scene.add( obj );
+		scene.add( obj );
+	}
+
+	updateScene() {
+
 	}
 
 	updateSize(renderer, camera, width, height ) {
@@ -297,7 +342,7 @@ export class ThreeModules {
 			
 			} );
             
-			let fileExt = [ '.gltf', '.fbx', '.obj', 'glb', 'zip' ];
+			let fileExt = [ '.gltf', '.fbx', '.obj', '.glb', '.zip' ];
 
 			for ( let i = 0; i < files.length; i ++ ) {
 
@@ -485,14 +530,14 @@ export class ThreeModules {
 				break;
 			}
 
-			case 'zip':
-			{
-				reader.addEventListener( 'load', function ( event ) {
-					handleZIP( event.target.result, cb );
-				}, false );
-				reader.readAsArrayBuffer( file );
-				break;
-			}
+			// case 'zip':
+			// {
+			// 	reader.addEventListener( 'load', function ( event ) {
+			// 		handleZIP( event.target.result, cb );
+			// 	}, false );
+			// 	reader.readAsArrayBuffer( file );
+			// 	break;
+			// }
 
 			default:
 				console.error( 'Unsupported file format (' + extension + ').' );

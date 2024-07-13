@@ -1,7 +1,7 @@
 {
   "name": "mogl3d-editor",
-  "version": "1.2.4",
-  "description": "2024.06.13 | Ver 1.2.4: update new(addObject method).",
+  "version": "1.2.5",
+  "description": "2024.06.13 | Ver 1.2.5: update files method changed",
   "main": "dist/mogl3d-editor.js",
   "module": "dist/mogl3d-editor.module.js",
   "exports": {
