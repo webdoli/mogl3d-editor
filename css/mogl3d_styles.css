@@ -173,6 +173,60 @@ span.divider {
 }
 
 /* Modal */
+.three-file-modal {
+    position: fixed; 
+    z-index: 1; 
+    left: 20%;
+    top: 30%;
+    
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px; 
+}
+
+.three-file-modal-content {
+    background-color: #fefefe;
+    margin: 5% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+.three-file-close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.three-file-close-button:hover,
+.three-file-close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.three-file-file-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.three-file-file-upload {
+    width: 45%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="file"] {
+    width: 100%;
+}
+
+
 .modal {
     display: none; 
     position: fixed; 
@@ -193,7 +247,8 @@ span.divider {
     border: 1px solid #888;
     width: 80%; 
 }
-  
+
+
 /* Close Button */
 .modalClose {
     color: #aaa;

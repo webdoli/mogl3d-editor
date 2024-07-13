@@ -1,7 +1,7 @@
 {
   "name": "mogl3d-editor",
-  "version": "1.2.5",
-  "description": "2024.06.13 | Ver 1.2.5: update files method changed",
+  "version": "1.2.6",
+  "description": "2024.06.13 | Ver 1.2.6: css modal gui updated",
   "main": "dist/mogl3d-editor.js",
   "module": "dist/mogl3d-editor.module.js",
   "exports": {
