@@ -266,11 +266,11 @@ export class ThreeModules {
         return scnContainer;
     }
 
-	initPost( files, cls ) {
+	initPost( files, id ) {
 
 		// console.log('initPost: ', files );
 		let threeScenes_keys = Object.keys( this.threeScenes );
-		let element = document.querySelector(`.${cls}`);
+		let element = document.querySelector(`#${id}`);
 
 		this.loadFiles( files, null, res => {
 			
@@ -279,8 +279,8 @@ export class ThreeModules {
 				
 				let threeSceneSet = new Set( threeScenes_keys );
 				
-				if( threeSceneSet.has( cls ) ) {
-					this.addObject( res, this.threeScenes[ cls ] );
+				if( threeSceneSet.has( id ) ) {
+					this.addObject( res, this.threeScenes[ id ] );
 				} else {
 					this.init( element, res );
 				}
@@ -299,7 +299,11 @@ export class ThreeModules {
 	}
 
 	addObject( obj ) {
-		scene.add( obj );
+		if( scene ) { 
+			scene.add( obj ); 
+		} else {
+			this.scene.add( obj );
+		}
 	}
 
 	updateScene() {
