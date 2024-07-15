@@ -298,7 +298,7 @@ export class ThreeModules {
 		if( this.scene ) return this.scene;
 	}
 
-	addObject( obj ) {
+	addObject( obj, scene ) {
 		if( scene ) { 
 			scene.add( obj ); 
 		} else {
